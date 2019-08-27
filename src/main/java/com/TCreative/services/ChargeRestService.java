@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -16,6 +17,7 @@ import com.TCreative.entities.Charge;
 import com.TCreative.metier.ChargeMetier;
 
 @RestController
+@CrossOrigin(origins ="http://localhost:4200") 
 public class ChargeRestService {
 
 	@Autowired
@@ -36,9 +38,9 @@ public class ChargeRestService {
 		chargeMetier.deleteCharge(idCharge);
 	}
 
-	@PutMapping(value = "/charges/{idCharge}")
-	public Charge updateCharge(@RequestBody Charge c, @PathVariable int idCharge) {
-		return chargeMetier.updateCharge(c, idCharge);
+	@PutMapping(value = "/charges")
+	public Charge updateCharge(@RequestBody Charge c) {
+		return chargeMetier.updateCharge(c);
 	}
 
 	@RequestMapping(value = "/charges/{idCharge}", method = RequestMethod.GET)

@@ -15,7 +15,7 @@ public class Charge implements Serializable {
 	private int idCharge;
 	private String nomCharge;
 	private String typeCharge;
-	private Date dateCharge;
+	private String dateCharge;
 	private float montantCharge;
 
 	public Charge() {
@@ -60,11 +60,11 @@ public class Charge implements Serializable {
 		this.typeCharge = typeCharge;
 	}
 
-	public Date getDateCharge() {
+	public String getDateCharge() {
 		return dateCharge;
 	}
 
-	public void setDateCharge(Date dateCharge) {
+	public void setDateCharge(String dateCharge) {
 		this.dateCharge = dateCharge;
 	}
 

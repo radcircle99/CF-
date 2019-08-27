@@ -15,5 +15,6 @@ public interface FormationMetier {
 
 	public void deleteFormation(int idFormation);
 
-	public Formation updateFormation(Formation newFormation, int idFormation);
+	public Formation updateFormation(Formation newFormation);
+
 }

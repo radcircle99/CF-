@@ -41,8 +41,8 @@ public class PayementRestService {
 		payementMetier.deletePayement(idPayement);
 	}
 
-	@PutMapping(value = "/payements/{idPayement}")
-	public Payement updatePayement(@RequestBody Payement p, @PathVariable int idPayement) {
-		return payementMetier.updatePayement(p, idPayement);
+	@PutMapping(value = "/payements")
+	public Payement updatePayement(@RequestBody Payement p) {
+		return payementMetier.updatePayement(p);
 	}
 }

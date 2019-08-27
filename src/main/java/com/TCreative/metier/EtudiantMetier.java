@@ -10,11 +10,13 @@ public interface EtudiantMetier {
 	public Etudiant saveEtudiant(Etudiant e);
 
 	public List<Etudiant> listEtudiant();
-
+	
 	public Optional<Etudiant> findEtudiant(int idPer);
-
+	
 	public void deleteEtudiant(int idPer);
 
-	public Etudiant updateEtudiant(Etudiant e, int idPer);
+	public Etudiant updateEtudiant(Etudiant e);
 
+	
+//	public Etudiant UpdateEtudiant(Etudiant e);
 }

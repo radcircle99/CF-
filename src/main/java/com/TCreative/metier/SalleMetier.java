@@ -15,5 +15,5 @@ public interface SalleMetier {
 
 	public void deleteSalle(int idSalle);
 
-	public Salle updateSalle(Salle newSalle, int idSalle);
+	public Salle updateSalle(Salle newSalle);
 }

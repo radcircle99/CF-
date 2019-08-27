@@ -36,9 +36,9 @@ public class SalleRestService {
 		salleMetier.deleteSalle(idSalle);
 	}
 
-	@PutMapping(value = "/salles/{idSalle}")
-	public Salle updateSalle(@RequestBody Salle newSalle, @PathVariable int idSalle) {
-		return salleMetier.updateSalle(newSalle, idSalle);
+	@PutMapping(value = "/salles")
+	public Salle updateSalle(@RequestBody Salle newSalle) {
+		return salleMetier.updateSalle(newSalle);
 	}
 
 	@RequestMapping(value = "/salles/{idSalle}", method = RequestMethod.GET)

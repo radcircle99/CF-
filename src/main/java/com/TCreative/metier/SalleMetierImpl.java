@@ -34,19 +34,12 @@ public class SalleMetierImpl implements SalleMetier {
 	}
 
 	@Override
-	public Salle updateSalle(Salle newSalle, int idSalle) {
+	public Salle updateSalle(Salle newSalle) {
 		// TODO Auto-generated method stub
-		return salleRepository.findById(idSalle).map(s -> {
-			if (newSalle.getCapaciteSalle() != 0)
-				s.setCapaciteSalle(newSalle.getCapaciteSalle());
-			if (newSalle.getNumeroSalle() != 0)
-				s.setNumeroSalle(newSalle.getNumeroSalle());
-			return salleRepository.save(s);
-		}).orElseGet(() -> {
-			newSalle.setIdSalle(idSalle);
+	
 			return salleRepository.save(newSalle);
-		});
-	}
+		}
+	
 
 	@Override
 	public Optional<Salle> findsalle(int idSalle) {

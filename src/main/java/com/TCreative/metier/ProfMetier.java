@@ -15,7 +15,7 @@ public interface ProfMetier {
 
 	public void deleteProf(int idPer);
 
-	public Prof updateProf(Prof newProf, int idPer);
+	public Prof updateProf(Prof newProf);
 
-	public Prof updateRemun(Prof p);
+
 }

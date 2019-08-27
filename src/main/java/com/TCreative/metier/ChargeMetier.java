@@ -15,5 +15,7 @@ public interface ChargeMetier {
 
 	public void deleteCharge(int idCharge);
 
-	public Charge updateCharge(Charge c, int idCharge);
+	public Charge updateCharge(Charge newCharge);
+
+
 }

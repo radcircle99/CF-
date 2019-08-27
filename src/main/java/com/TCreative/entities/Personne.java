@@ -43,6 +43,23 @@ public class Personne implements Serializable {
 		this.prenomPer = prenomPer;
 	}
 
+	public Personne(String nomPer, String prenomPer, String adressePer, int telPer) {
+		super();
+		this.nomPer = nomPer;
+		this.prenomPer = prenomPer;
+		this.adressePer = adressePer;
+		this.telPer = telPer;
+	}
+
+	public Personne(int idPer, String nomPer, String prenomPer, String adressePer, int telPer) {
+		super();
+		this.idPer = idPer;
+		this.nomPer = nomPer;
+		this.prenomPer = prenomPer;
+		this.adressePer = adressePer;
+		this.telPer = telPer;
+	}
+
 	public int getIdPer() {
 		return idPer;
 	}

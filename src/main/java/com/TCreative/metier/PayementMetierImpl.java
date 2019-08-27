@@ -19,7 +19,7 @@ public class PayementMetierImpl implements PayementMetier {
 	@Override
 	public Payement savePayement(Payement p) {
 		// TODO Auto-generated method stub
-		p.setDatePayement(new Date());
+		
 		return payementRepository.save(p);
 	}
 
@@ -42,20 +42,13 @@ public class PayementMetierImpl implements PayementMetier {
 	}
 
 	@Override
-	public Payement updatePayement(Payement newPayement, int idPayement) {
+	public Payement updatePayement(Payement p) {
 		// TODO Auto-generated method stub
-		return payementRepository.findById(idPayement).map(p -> {
-			if (newPayement.getDatePayement() != null)
-				p.setDatePayement(newPayement.getDatePayement());
-			if (newPayement.getMoisPayer() != null)
-				p.setMoisPayer(newPayement.getMoisPayer());
-			if (newPayement.getEtudiant() != null)
-				p.setEtudiant(newPayement.getEtudiant());
-			return payementRepository.save(p);
-		}).orElseGet(() -> {
-			newPayement.setIdPayement(idPayement);
-			return payementRepository.save(newPayement);
-		});
+		return payementRepository.save(p);
 	}
 
-}
+	
+		
+	}
+
+

@@ -19,7 +19,6 @@ public class ChargeMetierImpl implements ChargeMetier {
 	@Override
 	public Charge saveCharge(Charge c) {
 		// TODO Auto-generated method stub
-		c.setDateCharge(new Date());
 		return chargeRepository.save(c);
 	}
 
@@ -36,23 +35,23 @@ public class ChargeMetierImpl implements ChargeMetier {
 	}
 
 	@Override
-	public Charge updateCharge(Charge newCharge, int idCharge) {
-		// TODO Auto-generated method stub
-		return chargeRepository.findById(idCharge).map(c -> {
-			if (newCharge.getNomCharge() != null)
-				c.setNomCharge(newCharge.getNomCharge());
-			if (newCharge.getMontantCharge() != 0)
-				c.setMontantCharge(newCharge.getMontantCharge());
-			if (newCharge.getTypeCharge() != null)
-				c.setTypeCharge(newCharge.getTypeCharge());
-			if (newCharge.getDateCharge() != null)
-				c.setDateCharge(newCharge.getDateCharge());
-			return chargeRepository.save(c);
-		}).orElseGet(() -> {
-			newCharge.setIdCharge(idCharge);
-			return chargeRepository.save(newCharge);
-		});
-	}
+	public Charge updateCharge(Charge newCharge) {
+//		// TODO Auto-generated method stub
+//		return chargeRepository.findById(idCharge).map(c -> {
+//			if (newCharge.getNomCharge() != null)
+//				c.setNomCharge(newCharge.getNomCharge());
+//			if (newCharge.getMontantCharge() != 0)
+//				c.setMontantCharge(newCharge.getMontantCharge());
+//			if (newCharge.getTypeCharge() != null)
+//				c.setTypeCharge(newCharge.getTypeCharge());
+//			if (newCharge.getDateCharge() != null)
+//				c.setDateCharge(newCharge.getDateCharge());
+//			return chargeRepository.save(c);
+//		}).orElseGet(() -> {
+//			newCharge.setIdCharge(idCharge);
+		return chargeRepository.save(newCharge);
+		}
+	
 
 	@Override
 	public Optional<Charge> findCharge(int idCharge) {

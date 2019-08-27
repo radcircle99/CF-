@@ -15,6 +15,8 @@ public interface PayementMetier {
 
 	public void deletePayement(int idPayement);
 
-	public Payement updatePayement(Payement p, int idPayement);
+	public Payement updatePayement(Payement p);
+
+
 
 }

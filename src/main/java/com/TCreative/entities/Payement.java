@@ -17,7 +17,7 @@ public class Payement implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPayement;
 	private String moisPayer;
-	private Date datePayement;
+	private String datePayement;
 	@ManyToOne
 	@JoinColumn(name = "idEtud")
 	private Etudiant etudiant;
@@ -53,11 +53,11 @@ public class Payement implements Serializable {
 		this.moisPayer = moisPayer;
 	}
 
-	public Date getDatePayement() {
+	public String getDatePayement() {
 		return datePayement;
 	}
 
-	public void setDatePayement(Date datePayement) {
+	public void setDatePayement(String datePayement) {
 		this.datePayement = datePayement;
 	}
 

@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 @Entity
 public class Formation implements Serializable {
 	@Id
@@ -17,8 +20,8 @@ public class Formation implements Serializable {
 	private int idFomartion;
 	private String nomFormation;
 	private String typeFormation;
-	private Date dateDebut;
-	private String dureeFomation;
+	private String dateDebut;
+	private String dureeFormation;
 	@ManyToOne
 	@JoinColumn(name = "idSalle")
 	private Salle salle;
@@ -32,12 +35,12 @@ public class Formation implements Serializable {
 		super();
 	}
 
-	public Formation(String nomFormation, String typeFormation, Date dateDebut, String dureeFomation) {
+	public Formation(String nomFormation, String typeFormation, String dateDebut, String dureeFomation) {
 		super();
 		this.nomFormation = nomFormation;
 		this.typeFormation = typeFormation;
 		this.dateDebut = dateDebut;
-		this.dureeFomation = dureeFomation;
+		this.dureeFormation = dureeFomation;
 	}
 
 	public int getIdFomartion() {
@@ -64,34 +67,38 @@ public class Formation implements Serializable {
 		this.typeFormation = typeFormation;
 	}
 
-	public Date getDateDebut() {
+	public String getDateDebut() {
 		return dateDebut;
 	}
 
-	public void setDateDebut(Date dateDebut) {
+	public void setDateDebut(String dateDebut) {
 		this.dateDebut = dateDebut;
 	}
 
 	public String getDureeFomation() {
-		return dureeFomation;
+		return dureeFormation;
 	}
 
 	public void setDureeFomation(String dureeFomation) {
-		this.dureeFomation = dureeFomation;
+		this.dureeFormation = dureeFomation;
 	}
 
+	@JsonIgnore
 	public Salle getSalle() {
 		return salle;
 	}
-
+	
+	@JsonSetter
 	public void setSalle(Salle salle) {
 		this.salle = salle;
 	}
-
+	
+	@JsonIgnore
 	public Personne getPer() {
 		return personne;
 	}
 
+	@JsonSetter
 	public void setPer(Personne per) {
 		this.personne = per;
 	}

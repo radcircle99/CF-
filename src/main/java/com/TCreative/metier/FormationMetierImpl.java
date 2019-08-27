@@ -40,22 +40,10 @@ public class FormationMetierImpl implements FormationMetier {
 	}
 
 	@Override
-	public Formation updateFormation(Formation newFormation, int idFormation) {
+	public Formation updateFormation(Formation newFormation) {
 		// TODO Auto-generated method stub
-		return formationRepository.findById(idFormation).map(f -> {
-			if (newFormation.getNomFormation() != null)
-				f.setNomFormation(newFormation.getNomFormation());
-			if (newFormation.getTypeFormation() != null)
-				f.setTypeFormation(newFormation.getTypeFormation());
-			if (newFormation.getDateDebut() != null)
-				f.setDateDebut(newFormation.getDateDebut());
-			if (newFormation.getDureeFomation() != null)
-				f.setDureeFomation(newFormation.getDureeFomation());
-			return formationRepository.save(f);
-		}).orElseGet(() -> {
-			newFormation.setIdFomartion(idFormation);
-			return formationRepository.save(newFormation);
-		});
-	}
+		return formationRepository.save(newFormation);
+
+         }
 
 }

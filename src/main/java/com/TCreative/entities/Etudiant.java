@@ -14,9 +14,9 @@ public class Etudiant extends Personne {
 	@Column(nullable = true)
 	private String photoEtud;
 	@Column(nullable = true)
-	private Date dateNaissance;
+	private String dateNaissance;
 	@Column(nullable = true)
-	private Date dateInscription;
+	private String dateInscription;
 	@Column(nullable = true)
 	private float montantPayer;
 	@Column(nullable = true)
@@ -32,6 +32,15 @@ public class Etudiant extends Personne {
 		super(nomPer, prenomPer);
 	}
 
+	public Etudiant(String nomPer, String prenomPer ,String photoEtud,String dateNaissance, String dateInscription,float montantPayer,String dernierMoisPayer, String adressePer, int telPer ) {
+		super(nomPer, prenomPer, adressePer, telPer);
+		this.photoEtud = photoEtud;
+		this.dateNaissance = dateNaissance;
+		this.dateInscription = dateInscription;
+		this.montantPayer = montantPayer;
+		this.dernierMoisPayer = dernierMoisPayer;
+	}
+
 	public String getPhotoEtud() {
 		return photoEtud;
 	}
@@ -40,19 +49,19 @@ public class Etudiant extends Personne {
 		this.photoEtud = photoEtud;
 	}
 
-	public Date getDateNaissance() {
+	public String getDateNaissance() {
 		return dateNaissance;
 	}
 
-	public void setDateNaissance(Date dateNaissance) {
+	public void setDateNaissance(String dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 
-	public Date getDateInscription() {
+	public String getDateInscription() {
 		return dateInscription;
 	}
 
-	public void setDateInscription(Date dateInscription) {
+	public void setDateInscription(String dateInscription) {
 		this.dateInscription = dateInscription;
 	}
 
