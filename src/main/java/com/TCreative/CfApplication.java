@@ -9,5 +9,5 @@ public class CfApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CfApplication.class, args);
 	}
-
+	
 }
